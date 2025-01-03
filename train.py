@@ -12,12 +12,13 @@ from torch.optim import SGD
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
+
 def parse_args():
     parser = argparse.ArgumentParser(description='Mining Latent Classes for Few-shot Segmentation')
     # basic arguments
     parser.add_argument('--data-root',
                         type=str,
-                        required=True,
+                        default='./Datasets_CrackNex/LCSD',
                         help='root path of training dataset')
     parser.add_argument('--dataset',
                         type=str,
@@ -44,7 +45,7 @@ def parse_args():
     parser.add_argument('--backbone',
                         type=str,
                         choices=['resnet50', 'resnet101'],
-                        default='resnet50',
+                        default='resnet101',
                         help='backbone of semantic segmentation model')
 
     # few-shot training arguments
