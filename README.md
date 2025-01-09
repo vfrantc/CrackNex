@@ -1,3 +1,27 @@
+Original dataset should be converted to proper one using convert.py first. 
+Then QD should be installed. 
+
+```bash
+CUDA_VISIBLE_DEVICES=0 nohup python -W ignore train.py \
+     --dataset LCSD \
+     --data-root ./Datasets_CrackNex/LCSD \
+     --backbone resnet101 \
+     --shot 1 \
+     --episode 6000 \
+     --snapshot 200 \
+     > training.log 2>&1 &
+
+CUDA_VISIBLE_DEVICES=1 nohup python -W ignore qtrain.py \
+     --dataset LCSD \
+     --data-root ./Datasets_CrackNex/LCSD \
+     --backbone resnet101 \
+     --shot 1 \
+     --episode 6000 \
+     --snapshot 200 \
+     > quaternion_training.log 2>&1 &
+```
+
+
 # [ICRA2024] CrackNex: a Few-shot Low-light Crack Segmentation Model Based on Retinex Theory for UAV Inspections
 [Zhen Yao](https://scholar.google.com/citations?user=8-IhrB0AAAAJ&hl=en&oi=sra), [Jiawei Xu](https://scholar.google.com/citations?user=b3XkcPkAAAAJ&hl=en&oi=ao), Shuhang Hou, [Mooi Choo Chuah](https://scholar.google.com/citations?hl=en&user=SZBKvksAAAAJ).
 
