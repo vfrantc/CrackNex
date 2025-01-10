@@ -19,6 +19,15 @@ CUDA_VISIBLE_DEVICES=1 nohup python -W ignore qtrain.py \
      --episode 6000 \
      --snapshot 200 \
      > quaternion_training.log 2>&1 &
+
+CUDA_VISIBLE_DEVICES=1 nohup python -W ignore qqtrain.py \
+     --dataset LCSD \
+     --data-root ./Datasets_CrackNex/LCSD \
+     --backbone resnet101 \
+     --shot 1 \
+     --episode 6000 \
+     --snapshot 200 \
+     > qquaternion_training.log 2>&1 &
 ```
 
 

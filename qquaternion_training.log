@@ -1,0 +1,36 @@
+nohup: ignoring input
+
+Namespace(backbone='resnet101', batch_size=1, crop_size=400, data_root='./Datasets_CrackNex/LCSD', dataset='LCSD', episode=6000, loss='CE', lr=0.001, seed=0, shot=1, snapshot=200)
+
+Params: 102.0M
+
+==> Epoch 0, learning rate = 0.00100				 Previous best = 0.00
+  0%|          | 0/200 [00:00<?, ?it/s]  0%|          | 0/200 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "qqtrain.py", line 214, in <module>
+    main()
+  File "qqtrain.py", line 171, in main
+    out_ls = model(img_s_list, hiseq_s_list, mask_s_list, img_q, hiseq_q, mask_q)
+  File "/opt/conda/envs/cracknex/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/envs/cracknex/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 169, in forward
+    return self.module(*inputs[0], **kwargs[0])
+  File "/opt/conda/envs/cracknex/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/vladimirfrants9/mCrackNex/model/QQCrackNex_matching.py", line 244, in forward
+    q_0_hiseq = self.rgb_layer0(hiseq_q)
+  File "/opt/conda/envs/cracknex/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/envs/cracknex/lib/python3.8/site-packages/torch/nn/modules/container.py", line 204, in forward
+    input = module(input)
+  File "/opt/conda/envs/cracknex/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/envs/cracknex/lib/python3.8/site-packages/torch/nn/modules/container.py", line 204, in forward
+    input = module(input)
+  File "/opt/conda/envs/cracknex/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/envs/cracknex/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 463, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/opt/conda/envs/cracknex/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 459, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Given groups=1, weight of size [64, 11, 3, 3], expected input[1, 3, 400, 400] to have 11 channels, but got 3 channels instead
