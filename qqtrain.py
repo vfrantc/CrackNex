@@ -119,10 +119,10 @@ def main():
     #    param.requires_grad = False
     #for param in model.rgb_layer1.parameters():
     #    param.requires_grad = False
-    for param in model.ref_layer0.parameters():
-        param.requires_grad = False
-    for param in model.ref_layer1.parameters():
-        param.requires_grad = False
+    # for param in model.ref_layer0.parameters():
+    #     param.requires_grad = False
+    # for param in model.ref_layer1.parameters():
+    #     param.requires_grad = False
 
     for module in model.modules():
         if isinstance(module, torch.nn.BatchNorm2d):
